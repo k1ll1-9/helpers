@@ -8,6 +8,7 @@
             "email": "blazehardtoerase@gmail.com"
         }
     ],
+    "minimum-stability":"dev",
     "autoload": {
         "psr-4": {
             "K1ll1\\Lib\\": "Lib/",
