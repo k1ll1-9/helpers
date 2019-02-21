@@ -10,9 +10,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "K1ll1\\Lib\\": "Lib/",
-            "K1ll1\\Bitrix\\": "Lib/Bitrix/",
-            "K1ll1\\Classes\\": "Lib/Classes/"
+            "K11\\Lib\\": "Lib/",
+            "K11\\Bitrix\\": "Lib/Bitrix/",
+            "K11\\Classes\\": "Lib/Classes/"
         }
     },
     "require": {

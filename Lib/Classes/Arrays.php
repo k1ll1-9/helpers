@@ -1,7 +1,7 @@
 <?
 declare(strict_types=1);
 
-namespace K1ll1\Lib\Classes;
+namespace K11\Lib\Classes;
 
 /**
  * Class Array

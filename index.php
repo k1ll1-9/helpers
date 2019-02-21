@@ -1,4 +1,4 @@
-<? require_once $_SERVER['DOCUMENT_ROOT'].'/test/Helpers/K1ll1/vendor/autoload.php';?>
+<? require_once $_SERVER['DOCUMENT_ROOT'].'/test/K1ll1/vendor/autoload.php';?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,8 +12,8 @@
 <?
 $arri = [1,2,3];
 $arr = ['k' => 1, 't' => '12'];
-\K1ll1\Lib\Classes\Arrays::wrapIfAssociative($arr);
-\K1ll1\Lib\Classes\Debug::show($arr);
+\K11\Lib\Classes\Arrays::wrapIfAssociative($arr);
+\K11\Lib\Classes\Debug::show($arr);
 ?>
 </body>
 </html>

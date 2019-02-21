@@ -1,7 +1,7 @@
 <?
 declare(strict_types=1);
 
-namespace K1ll1\Bitrix;
+namespace K11\Bitrix;
 
 use Bitrix\Iblock\IblockTable;
 
