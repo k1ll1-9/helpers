@@ -3,8 +3,9 @@ declare(strict_types=1);
 
 namespace K11\Bitrix;
 
-use Bitrix\Iblock\IblockTable;
 use Bitrix\Main\Loader;
+use Bitrix\Main\SystemException;
+use K11\Lib\Classes\Debug;
 
 class Iblock
 {
@@ -18,15 +19,22 @@ class Iblock
 	{
 		Loader::includeModule('iblock');
 
-		$iblock = IblockTable::getList(
+		$res = \CIBlock::getList(
+			[],
 			[
-				'filter' =>
-					['CODE' => $iblockCode]
-				,
-				'select' =>
-					['ID']
-			])->fetch()['ID'];
+				'CODE' => $iblockCode,
+				'SITE_ID' => SITE_ID
+			]
+		);
 
-		return (int)$iblock['ID'];
+		$i = 0;
+		while ($row = $res->Fetch()) {
+			if ($i >= 1) {
+				throw new SystemException('More than 1 iblock with same code');
+			}
+			$iblockID = $row['ID'];
+			$i++;
+		}
+		return (int)$iblockID;
 	}
 }
