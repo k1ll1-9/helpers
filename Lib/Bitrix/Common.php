@@ -8,15 +8,16 @@ class Common
 	/**
 	 * @return mixed|string
 	 */
-	public static function switchLanguage()
+	public static function switchLanguage($secondaryLangFolder = 'ru')
 	{
 		global $APPLICATION;
 
 		$url = $APPLICATION->GetCurPage(false);
-		if (LANGUAGE_ID === 'ru') {
-			return \str_replace('/ru/', '/', $url);
+
+		if (LANGUAGE_ID === $secondaryLangFolder) {
+			return \str_replace('/'.$secondaryLangFolder.'/', '/', $url);
 		} else {
-			return '/ru' . $url;
+			return '/'.$secondaryLangFolder . $url;
 		}
 	}
 

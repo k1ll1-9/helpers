@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace K11\Bitrix;
 
 use Bitrix\Main\Loader;
+use Bitrix\Iblock\PropertyEnumerationTable;
 use Bitrix\Main\SystemException;
 use K11\Lib\Classes\Debug;
 
@@ -36,5 +37,21 @@ class Iblock
 			$i++;
 		}
 		return (int)$iblockID;
+	}
+	public static function propertyEnumXMLIDByID($ID,$iblockID = '')
+	{
+		$property = PropertyEnumerationTable::getList(
+			[
+				'filter' =>
+					[
+						'ID' => $ID,
+						''
+					]
+				,
+				'select' =>
+					['XML_ID']
+			])->fetch();
+
+		return $property['XML_ID'];
 	}
 }
