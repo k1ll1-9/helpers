@@ -1,12 +1,11 @@
-<?
+<? /** @noinspection ALL */
 declare(strict_types=1);
 
 namespace K11\Bitrix;
 
-use Bitrix\Main\Loader;
 use Bitrix\Iblock\PropertyEnumerationTable;
+use Bitrix\Main\Loader;
 use Bitrix\Main\SystemException;
-use K11\Lib\Classes\Debug;
 
 class Iblock
 {
@@ -38,7 +37,8 @@ class Iblock
 		}
 		return (int)$iblockID;
 	}
-	public static function propertyEnumXMLIDByID($ID,$iblockID = '')
+
+	public static function propertyEnumXMLIDByID($ID, $iblockID = '')
 	{
 		$property = PropertyEnumerationTable::getList(
 			[
@@ -53,5 +53,19 @@ class Iblock
 			])->fetch();
 
 		return $property['XML_ID'];
+	}
+
+	public static function propertyByCodeAndXMLID($iblockID, $code, $XMLID)
+	{
+		$property = \CIBlockPropertyEnum::GetList(
+			[],
+			[
+				"IBLOCK_ID" => $iblockID,
+				'CODE' => $code,
+				"XML_ID" => $XMLID
+			]
+		)->GetNext();
+
+		return $property;
 	}
 }

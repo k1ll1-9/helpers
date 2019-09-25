@@ -39,7 +39,7 @@ class Debug {
 			echo "<script>console.info('Debug find resource:');</script>";
 		}
 
-		$trace = \json_encode($trace);
+		$trace = \json_encode($trace,JSON_PARTIAL_OUTPUT_ON_ERROR);
 
 		echo "<script>console.log($trace);</script>";
 	}
