@@ -1,7 +1,7 @@
-<?
+<?php
 declare(strict_types=1);
 
-namespace K11\Lib\Classes;
+namespace K11\Classes;
 
 /**
  * Class Debug
@@ -36,20 +36,20 @@ class Debug {
 				'isLocal'  => \stream_is_local($obj)
 			];
 
-			echo "<script>console.info('Debug find resource:');</script>";
+			echo "<script>console.info('Debug find resource:')</script>";
 		}
 
-		$trace = \json_encode($trace);
+		$trace = \json_encode($trace,JSON_PARTIAL_OUTPUT_ON_ERROR);
 
-		echo "<script>console.log($trace);</script>";
+		echo "<script>console.log($trace)</script>";
 	}
 
 	/**
 	 * @param $callback
 	 */
-	public static function checkMicroTime($callback) {
+	public static function checkMicroTime($callback,$args) {
 		$startTime = \microtime(true);
-		\call_user_func($callback);
+		\call_user_func_array($callback,$args);
 		echo \microtime(true) - $startTime;
 	}
 }

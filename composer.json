@@ -1,21 +1,20 @@
 {
-    "name": "k1ll1/helpers",
-    "description": "helpers for web development",
-    "type": "library",
-    "authors": [
-        {
-            "name": "k1ll1",
-            "email": "blazehardtoerase@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "K11\\Lib\\": "Lib/",
-            "K11\\Bitrix\\": "Lib/Bitrix/",
-            "K11\\Classes\\": "Lib/Classes/"
-        }
-    },
-    "require": {
-        "php": ">=7.0"
+  "name": "k1ll1/helpers",
+  "description": "helpers for web development",
+  "type": "library",
+  "authors": [
+    {
+      "name": "k1ll1",
+      "email": "blazehardtoerase@gmail.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "K11\\": "Lib/"
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*"
+  }
 }

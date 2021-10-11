@@ -1,7 +1,7 @@
-<?
+<?php
 declare(strict_types=1);
 
-namespace K11\Lib\Classes;
+namespace K11\Classes;
 
 /**
  * Class Array
